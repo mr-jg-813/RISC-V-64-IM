@@ -1,4 +1,4 @@
-# BRISC-V RV64IM Core
+# GRISC-V RV64IM Core
 
 A Verilog implementation of a 64-bit RISC-V integer processor with a seven-stage pipeline, stall/bypass control, instruction and data memories, and a simple Icarus Verilog simulation flow. The C runner builds a program for the core, creates the memory images, and starts the simulation.
 
