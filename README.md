@@ -17,14 +17,14 @@ This repository contains the implemented RTL and simulation setup; it is not a c
 ## Repository layout
 
 ```text
-src_64/       RV64IM core and memory RTL
-tb/           Icarus Verilog testbench
- llvm/        Sample C programs and their generated build folders
- data/        Initial data-memory image
- results/     Register and data-memory dumps from simulation
- run_c.sh     Compile a C program, prepare memory images, and simulate
- run_sim64    Compile the RTL testbench and run the simulator
- main_bsram.mem Default/generated instruction-memory image
+ src_64/         RV64IM core and memory RTL
+ tb/             Icarus Verilog testbench
+ llvm/           Sample C programs and their generated build folders
+ data/           Initial data-memory image
+ results/        Register and data-memory dumps from simulation
+ run_c.sh        Compile a C program, prepare memory images, and simulate
+ run_sim64       Compile the RTL testbench and run the simulator
+ main_bsram.mem  Default/generated instruction-memory image
 ```
 
 ## Requirements
