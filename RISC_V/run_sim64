@@ -1,0 +1,28 @@
+#!/bin/bash
+
+set -e
+
+cd "$(dirname "$0")"
+
+echo "=== BRISC-V RV64IM simulation ==="
+echo "[1/2] Compiling Verilog core..."
+
+iverilog -g2012 -o sim \
+  src_64/ALU.v src_64/bram.v src_64/bsram.v \
+  src_64/control_unit.v src_64/decode_pipe.v src_64/decode.v \
+  src_64/ecall_module.v src_64/semihost_putchar.v \
+  src_64/d_mem_interface.v src_64/execute_pipe.v src_64/execute.v \
+  src_64/fetch_pipe.v src_64/fetch.v src_64/i_mem_interface.v \
+  src_64/memory_hierarchy.v src_64/memory_pipe.v src_64/memory.v \
+  src_64/regFile.v src_64/RISC_V_Core.v src_64/stallControl.v \
+  src_64/writeback.v tb/tb_RISC_V_Core.v
+
+echo "[2/2] Running..."
+echo
+
+vvp sim "$@"
+
+rm -f sim
+
+echo
+echo "=== Simulation finished ==="

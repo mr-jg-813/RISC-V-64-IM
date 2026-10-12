@@ -1,0 +1,10 @@
+services:
+  risc-v-gui:
+    build: .
+    container_name: risc-v-gui
+    ports:
+      - "127.0.0.1:6080:6080"
+    volumes:
+      - "../RISC_V:/workspace/RISC_V"
+    stdin_open: true
+    tty: true
